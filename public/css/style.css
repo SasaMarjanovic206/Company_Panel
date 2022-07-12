@@ -1,0 +1,39 @@
+.center {
+    text-align: center;
+    justify-content: center;
+}
+.custom-card-header:first-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.container-btn-div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+}
+.container-btn {
+    width: 40%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+.loggeduser {
+    color: #737373;
+    margin-top: 5px;
+}
+.alertwarning {
+    color: red;
+}
+.company-link {
+    text-decoration: none;
+    color: white;
+}
+.company-paragraph {
+    width: 40%;
+}
+.control-label:after { 
+    content:"*";
+    color:red;
+}
