@@ -11286,3 +11286,68 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.center {
+  text-align: center;
+  justify-content: center;
+}
+.custom-card-header:first-child {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.container-btn-div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+}
+.container-btn {
+  width: 30%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+.loggeduser {
+  color: #737373;
+  margin-top: 5px;
+}
+.alertwarning {
+  color: red;
+}
+.company-link, .employee-link {
+  text-decoration: none;
+  color: white;
+}
+.company-paragraph {
+  width: 40%;
+}
+.control-label:after { 
+  content:"*";
+  color:red;
+}
+.currency {
+  margin-left: 1em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+.show-currency-div {
+  width: 90%;
+}
+.currency-converter-div {
+  width: 16%;
+}
+#currency-form {
+  width: 84%;
+}
+.currency-form-member {
+  width: 20%;
+  padding: 0 2em;
+}
+.currency-div {
+  width: 95%;
+  margin: auto;
+}
+.w-40 {
+  width: 40%;
+}

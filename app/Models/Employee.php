@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 use App\Models\Company;
 
 class Employee extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
+
+    public $asYouType = true;
 
     protected $table = "employees";
 
@@ -23,5 +26,12 @@ class Employee extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    public function toSearchableArray()
+    {
+        $array = $this->withoutRelations()->toArray();
+
+        return $array;
     }
 }

@@ -15,7 +15,7 @@
     margin-bottom: 1.5rem;
 }
 .container-btn {
-    width: 40%;
+    width: 30%;
     padding: 1rem;
     font-size: 1.1rem;
 }
@@ -26,7 +26,7 @@
 .alertwarning {
     color: red;
 }
-.company-link {
+.company-link, .employee-link {
     text-decoration: none;
     color: white;
 }
@@ -36,4 +36,29 @@
 .control-label:after { 
     content:"*";
     color:red;
+}
+.currency {
+    margin-left: 1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+.show-currency-div {
+    width: 90%;
+}
+.currency-converter-div {
+    width: 16%;
+}
+#currency-form {
+    width: 84%;
+}
+.currency-form-member {
+    width: 20%;
+    padding: 0 2em;
+}
+.currency-div {
+    width: 95%;
+    margin: auto;
+}
+.w-40 {
+    width: 40%;
 }

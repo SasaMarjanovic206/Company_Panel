@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+
 use App\Models\Employee;
 use App\Http\Requests\CreateEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
@@ -31,6 +32,7 @@ class EmployeeController extends Controller
     public function store(CreateEmployeeRequest $request)
     {
         $request->validated();
+
         $this->repository->store($request);
 
         return redirect()->route('companies.show', ['company' => $request->input('company-id')]);
@@ -62,4 +64,11 @@ class EmployeeController extends Controller
 
         return redirect()->route('companies.show', ['company' => $employee->company_id]);
     }
+
+    // public function search($term)
+    // {
+    //     $employees = Employee::search($term)->get()->load('company');
+        
+    //     return response()->json($employees);
+    // }
 }

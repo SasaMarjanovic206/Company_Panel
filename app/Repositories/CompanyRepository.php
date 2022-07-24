@@ -7,7 +7,7 @@ use App\Interfaces\CompanyRepositoryInterface;
 
 use Auth;
 
-class CompanyRepository implements CompanyRepositoryInterface{
+class CompanyRepository implements CompanyRepositoryInterface {
 
     public function getAll()
     {
@@ -26,10 +26,10 @@ class CompanyRepository implements CompanyRepositoryInterface{
 
         return $company;
     }
-
+    
     public function getOne($id)
     {
-        return Company::findOrFail($id);
+        return Company::findOrFail($id); //
     }
 
     public function update($data, $company, $path)
@@ -38,7 +38,7 @@ class CompanyRepository implements CompanyRepositoryInterface{
         $company->email = $data->input('edit-company-email');
         $company->website = $data->input('edit-company-website');
         $company->logo = $path;
-        $company->user_id = Auth::user()->id;
+        $company->user_id = Auth::user()->id; //
         $company->save();
 
         return $company;

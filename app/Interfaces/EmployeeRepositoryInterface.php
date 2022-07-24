@@ -2,9 +2,7 @@
 
 namespace App\Interfaces;
 
-use App\Interfaces\EmployeeRepositoryInterface;
-
-interface EmployeeRepositoryInterface{
+interface EmployeeRepositoryInterface {
 
     public function store($data);
 

@@ -2,9 +2,7 @@
 
 namespace App\Interfaces;
 
-use App\Interfaces\CompanyRepositoryInterface;
-
-interface CompanyRepositoryInterface{
+interface CompanyRepositoryInterface {
     
     public function getAll();
 

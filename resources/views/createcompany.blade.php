@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="company-logo" class="mb-2">{{ __('Logo') }}</label>
-                                <input type="file" class="form-control" name="company-logo" id="company-logo" accept=".jpg,.jpeg,.bmp,.png">
+                                <input type="file" class="form-control" name="company-logo" id="company-logo" accept=".jpg,.jpeg,.bmp,.png,.svg">
                             </div>
                         </div>
 

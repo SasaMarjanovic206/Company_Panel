@@ -31,7 +31,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
         $employee->last_name = $data->input('edit-last-name');
         $employee->email = $data->input('edit-employee-email');
         $employee->phone = $data->input('edit-phone');
-        $employee->company_id = $data->input('companyid');
+        // $employee->company_id = $data->input('companyid'); //
         $employee->save();
 
         return $employee;

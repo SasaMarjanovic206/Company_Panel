@@ -4,13 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 use App\Models\User;
 use App\Models\Employee;
 
 class Company extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
+
+    public $asYouType = true;
 
     protected $table = "companies";
 
@@ -30,4 +33,19 @@ class Company extends Model
     {
         return $this->hasMany(Employee::class);
     }
+
+    public function setLogoAttribute($value)
+    {
+        if($value == ''){
+            $this->attributes['logo'] = null;
+        }
+    }
+
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        return $array;
+    }
+
 }

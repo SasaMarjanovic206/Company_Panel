@@ -3,10 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
-use Auth;
-
-class CreateCompanyRequest extends FormRequest
+class SearchCompaniesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,15 +22,11 @@ class CreateCompanyRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(Request $request)
     {
-        $user = Auth::user();
-
+        dd($request->term);
         return [
-            'company-name' => 'required|min:3',
-            'company-email' => 'required|email|unique:companies,email',
-            'company-website' => 'min:5|nullable',
-            'company-logo' => 'file|mimes:jpeg,png,jpg,bmp,svg|max:2048|nullable',
+            'search-term' => 'required|regex:/^[ A-Za-z0-9ČčĆćŽžŠšĐđ,:@._+\-\x28\x29\"\s\/]*$/'
         ];
     }
 }

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SearchCompaniesController;
+use App\Http\Controllers\SearchEmployeesController;
+use App\Http\Controllers\CurrencyConverterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +36,8 @@ Route::get('employees/create/{id}', [
     'uses' => 'App\Http\Controllers\EmployeeController@createEmployee'
 ]);
 Route::resource('employees', EmployeeController::class, ['except' => 'create']);
+// Route::post('/searchcompanies/{term}', [SearchCompaniesController::class, 'search']);
+Route::post('/searchcompanies', [SearchCompaniesController::class, 'search']);
+Route::post('/searchemployees', [SearchEmployeesController::class, 'search']);
+
+Route::get('/currencyconverter', [CurrencyConverterController::class, 'converter']);

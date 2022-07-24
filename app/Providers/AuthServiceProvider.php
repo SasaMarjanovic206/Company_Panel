@@ -44,5 +44,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('deleteEmployee', function(User $user, Employee $employee){
             return $user->id === $employee->company->user_id;
         });
+        Gate::define('searchEmployee', function(User $user, $companyid){
+            $company = Company::find($companyid);
+            return $user->id === $company->user_id;
+        });
     }
 }

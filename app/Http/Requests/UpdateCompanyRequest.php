@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Company;
 
 use Auth;
 
@@ -30,7 +29,7 @@ class UpdateCompanyRequest extends FormRequest
             'edit-company-name' => 'required|min:3',
             'edit-company-email' => 'email|nullable|unique:companies,email,'.Auth::user()->id.',user_id',
             'edit-company-website' => 'min:5|nullable',
-            'edit-company-logo' => 'image|mimes:jpeg,png,jpg|max:2048|nullable',
+            'edit-company-logo' => 'file|mimes:jpeg,png,jpg,bmp,svg|max:2048|nullable',
         ];
     }
 }

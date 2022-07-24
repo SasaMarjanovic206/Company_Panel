@@ -125,6 +125,10 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    // 'fixerurl' => env('FIXERIO_BASE_URL'),
+
+    // 'fixerkey' => env('FIXERIO_ACCESS_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
@@ -182,6 +186,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        App\Providers\ConverterServiceProvider::class,
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
         /*
          * Package Service Providers...

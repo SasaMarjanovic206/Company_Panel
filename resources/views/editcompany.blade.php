@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('companies.update', $company->id) }}" method="POST">
+                    <form action="{{ route('companies.update', $company->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                         <div class="row mt-4">
@@ -36,11 +36,10 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="edit-company-logo" class="mb-2">{{ __('Logo') }}</label>
-                                <input type="file" class="form-control" name="edit-company-logo" id="edit-company-logo">
+                                <input type="file" class="form-control" name="edit-company-logo" id="edit-company-logo" accept=".jpg,.jpeg,.bmp,.png,.svg">
                             </div>
                             @if($company->logo)
                             <div class="form-group col-md-3">
-                                @php $company->logo = str_replace('public/', '', $company->logo); @endphp
                                 <img src="/storage/{{ $company->logo }}" alt="company logo" width="50px" height="50px" />
                             </div>
                             @endif
